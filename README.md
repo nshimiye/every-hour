@@ -1,4 +1,5 @@
 # Every Hour
+Generate any timed update EveryHour!
 
 ## Inspiration
 

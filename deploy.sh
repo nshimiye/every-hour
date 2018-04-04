@@ -9,7 +9,7 @@ function doCompile {
     npm run build
     mv build out
     echo "[doCompile] START List content of out"
-    ls -al
+    ls -al out
     echo "[doCompile] END List content of out"
 }
 

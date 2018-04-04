@@ -7,7 +7,7 @@ TARGET_BRANCH="gh-pages"
 function doCompile {
 #   bash ./compile.sh
     npm run build
-    mv build out
+    cp -rf build/* out/*
     echo "[doCompile] START List content of out"
     ls -al out
     echo "[doCompile] END List content of out"

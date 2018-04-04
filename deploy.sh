@@ -36,7 +36,11 @@ doCompile
 
 # Now let's go have some fun with the cloned repo
 cd out
+
+echo "START List content of out"
 ls -al
+echo "END List content of out"
+
 git config user.name "Travis CI"
 git config user.email "$COMMIT_AUTHOR_EMAIL"
 

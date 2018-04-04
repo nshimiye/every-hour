@@ -31,6 +31,7 @@ cd ..
 rm -rf out/**/* || exit 0
 
 # Run our compile script
+
 doCompile
 
 # Now let's go have some fun with the cloned repo
@@ -58,7 +59,7 @@ ENCRYPTED_IV=${!ENCRYPTED_IV_VAR}
 openssl aes-256-cbc -K $ENCRYPTED_KEY -iv $ENCRYPTED_IV -in ../deploy_key.enc -out ../deploy_key -d
 chmod 600 ../deploy_key
 eval `ssh-agent -s`
-ssh-add deploy_key
+ssh-add ../deploy_key
 
 # Now that we're all set up, we can push.
 git push $SSH_REPO $TARGET_BRANCH

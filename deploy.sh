@@ -5,7 +5,12 @@ SOURCE_BRANCH="master"
 TARGET_BRANCH="gh-pages"
 
 function doCompile {
-  bash ./compile.sh
+#   bash ./compile.sh
+    npm run build
+    mv build out
+    echo "[doCompile] START List content of out"
+    ls -al
+    echo "[doCompile] END List content of out"
 }
 
 # Pull requests and commits to other branches shouldn't try to deploy, just build to verify

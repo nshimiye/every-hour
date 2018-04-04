@@ -17,6 +17,8 @@ cache:
   directories:
   - node_modules
 before_deploy:
+- export PUBLIC_PATH="/every-hour/"
+- export INDEX_TEMPLATE="app/ghPages.html"
 - npm run build
 deploy:
   provider: script

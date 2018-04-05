@@ -39,13 +39,13 @@ export default function App() {
       </Helmet>
       <Header />
       <div style={{ height: 'calc(100vh - 200px)' }}>
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route path="/trivia" component={Trivia} />
-        <Route path="/price-tracking" component={PriceTracking} />
-        <Route path="/features" component={FeaturePage} />
-        <Route path="" component={NotFoundPage} />
-      </Switch>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/trivia" component={Trivia} />
+          <Route path="/price-tracking" component={PriceTracking} />
+          <Route path="/features" component={FeaturePage} />
+          <Route path="" component={NotFoundPage} />
+        </Switch>
       </div>
       <Footer />
     </AppWrapper>

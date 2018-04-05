@@ -13,6 +13,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux';
+import { useRouterHistory } from 'react-router';
 import FontFaceObserver from 'fontfaceobserver';
 import createHistory from 'history/createBrowserHistory';
 import 'sanitize.css/sanitize.css';
@@ -62,7 +63,10 @@ openSansObserver.load().then(() => {
 
 // Create redux store with history
 const initialState = {};
-const history = createHistory();
+// const history = createHistory();
+const history = useRouterHistory(createHistory)({
+  basename: '/every-hour',
+});
 const store = configureStore(initialState, history);
 const MOUNT_NODE = document.getElementById('app');
 

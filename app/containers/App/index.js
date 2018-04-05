@@ -38,15 +38,13 @@ export default function App() {
         <meta name="description" content="A React.js Boilerplate application" />
       </Helmet>
       <Header />
-      <div style={{ height: 'calc(100vh - 200px)' }}>
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/trivia" component={Trivia} />
-          <Route path="/price-tracking" component={PriceTracking} />
-          <Route path="/features" component={FeaturePage} />
-          <Route path="" component={NotFoundPage} />
-        </Switch>
-      </div>
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route path="/trivia" component={Trivia} />
+        <Route path="/price-tracking" component={PriceTracking} />
+        <Route path="/features" component={FeaturePage} />
+        <Route path="" component={NotFoundPage} />
+      </Switch>
       <Footer />
     </AppWrapper>
   );

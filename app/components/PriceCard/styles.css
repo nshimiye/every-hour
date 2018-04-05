@@ -1,0 +1,97 @@
+.page {
+    width: 350px;
+    height: auto;
+    background: #96CFEA;
+    margin: auto;
+  }
+  
+  .header {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1em;
+  }
+  .menu {
+    width: 50%;
+    text-align: center;
+  }
+  
+  .body {
+    margin: 1em;
+    margin-top: 2em;
+    min-height: 200px;
+    position: relative;
+  }
+  
+  .card-shadow-1 {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: .5rem;
+    top: -16px;
+    left: 6%;
+    width: 88%;
+    height: 50px;
+    position: absolute;
+  }
+  
+  .card-shadow-2 {
+    box-shadow: 0 -1px 5px -1px #96CFEA;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ffffff;
+    border-radius: .5rem;
+    top: -8px;
+    left: 3%;
+    width: 94%;
+    height: 50px;
+    position: absolute;
+  }
+  
+  /* START Card Styles */
+  .card {
+    box-shadow: 0 -1px 5px -1px #96CFEA;
+    align-items: center; background-color: #FFFFFF; border: 1px solid #ffffff; border-radius: .5rem; display: flex; flex-direction: column; flex: 1 0 0%; margin: 0rem; width: 100%; position: relative; }
+  .card::after { content: ""; position: absolute; z-index: -1; top: 0; left: 0; width: 100%; height: 100%; box-shadow: 0 5px 15px rgba(0, 0‘‘, 0, 0.3); }
+  .card > * { display: flex; flex-direction: column; }
+  .card__product--s150 .card__img { height: 100px; margin: 2rem; width: 100px; }
+  .card .card__body { flex: 1 1 auto; padding: 1rem; }
+  .card__footer { padding: 1rem; }
+  
+  .flag { border: 1px solid lightgray; left: -1px; 
+    border-top-left-radius: .5rem;
+    padding: .2rem .4rem; position: absolute; top: -1px; }
+  .flag:after { display: block; content: ''; border-top: 13px solid lightgray; border-right: 13px solid transparent; border-bottom: 13px solid transparent; border-left: 13px solid lightgray; width: 0; height: 0; position: absolute; right: -27px; top: -1px; }
+  .flag.flag--free { background: lightblue; border-color: lightblue; color: #FFFFFF; }
+  .flag.flag--free:after { border-top: 13px solid lightblue; /* border-bottom: 13px solid #A91B20; */ border-left: 13px solid lightblue; }
+  
+  .btn-checkout,
+  .is-selected { background-color: #ff8738; }
+  .is-selected:before { content: "\2713"; margin-right: .5rem; }
+  
+  /* END Card Styles */
+  
+  .footer {
+    align-items: center;
+    display: flex; flex-direction: column;
+    padding-bottom: 1em;
+  }
+
+  .btn {
+    user-select: none;
+    cursor: pointer;
+    outline: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    border: 2px solid #41addd;
+    color: #41addd;
+    box-sizing: border-box;
+    padding: 0.25em 2em;
+    border-radius: 4px;
+  }
+
+  .btn:active {
+    background: #41addd;
+    color: #fff;
+  }

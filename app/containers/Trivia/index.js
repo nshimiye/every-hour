@@ -8,11 +8,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
-import { FormattedMessage } from 'react-intl';
+// import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 
-import CenteredSection from './CenteredSection';
 
 import LoadingIndicator from 'components/LoadingIndicator';
 
@@ -27,46 +26,50 @@ import makeSelectTrivia, { makeSelectTimer } from './selectors';
 import { fetchNextQuestion } from './actions';
 import reducer from './reducer';
 import saga from './saga';
-import messages from './messages';
 
 export class Trivia extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
-    const { onFetchNextQuestion, timer, trivia } = this.props; 
+    const { onFetchNextQuestion, timer, trivia } = this.props;
     return (
-      <TriviaCard >
+      <div style={{ backgroundColor: '#96CFEA' }}>
         <Helmet>
           <title>Trivia</title>
           <meta name="description" content="Helping you enhance your general knowledge!" />
         </Helmet>
-        <CenteredSection>
+        <TriviaCard {...this.props}>
           <TriviaStatistic />
 
           {
-            trivia.loading?
-            <LoadingIndicator />:
-            <TriviaQuestion />
+            trivia.loading ?
+              <LoadingIndicator /> :
+              <TriviaQuestion />
           }
 
           <TriviaTimer onFetchNextQuestion={onFetchNextQuestion} timer={timer} />
-        </CenteredSection>
-      </TriviaCard>
+        </TriviaCard>
+      </div>
     );
   }
 }
 
 Trivia.propTypes = {
-  dispatch: PropTypes.func.isRequired,
+  onFetchNextQuestion: PropTypes.func,
+  timer: PropTypes.shape({
+    period: PropTypes.number.isRequired,
+    timeLeft: PropTypes.number.isRequired,
+  }),
+  trivia: PropTypes.object,
 };
 
 const mapStateToProps = createStructuredSelector({
   trivia: makeSelectTrivia(),
-  timer: makeSelectTimer()
+  timer: makeSelectTimer(),
 });
 
 function mapDispatchToProps(dispatch) {
   return {
     dispatch,
-    onFetchNextQuestion: (evt) => dispatch(fetchNextQuestion()),    
+    onFetchNextQuestion: () => dispatch(fetchNextQuestion()),
   };
 }
 

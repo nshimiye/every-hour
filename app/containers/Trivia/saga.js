@@ -11,6 +11,7 @@ import { resetTimer, decrementTimer, updateStoredQuestion, updateStoredResponse 
 
 // START Manage Timer
 const PERIOD = 30; // # secs until we generate next updated content
+const runForEver = true;
 
 export function* countdown() {
   let secs = PERIOD;
@@ -37,11 +38,11 @@ function* startTimer() {
 // Wait for successful response, then fire another request
 // Cancel polling if user logs out
 function* watchStartTimer() {
-  while (true) {
+  while (runForEver) {
     yield race({
-      a: call(startTimer),
-      b: take(FETCH_QUESTION),
-      c: take(USER_LEAVES_PAGE),
+      startTimer: call(startTimer),
+      cancelTimerOnFetch: take(FETCH_QUESTION),
+      cancelTimerOnLeave: take(USER_LEAVES_PAGE),
     });
     yield take(QUESTION_FETCH_SUCCEEDED);
   }

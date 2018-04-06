@@ -11,6 +11,9 @@ import PropTypes from 'prop-types';
 import Button from 'components/Button';
 
 class TriviaTimer extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+  componentDidMount() {
+    this.props.onFetchNextQuestion();
+  }
   render() {
     const { timer: { timeLeft }, onFetchNextQuestion } = this.props;
     return (

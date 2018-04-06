@@ -23,7 +23,7 @@ import TriviaTimer from 'components/TriviaTimer';
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
 import makeSelectTrivia, { makeSelectTimer } from './selectors';
-import { fetchNextQuestion } from './actions';
+import { fetchNextQuestion, evaluateUserResponse } from './actions';
 import reducer from './reducer';
 import saga from './saga';
 
@@ -54,6 +54,7 @@ export class Trivia extends React.Component { // eslint-disable-line react/prefe
 
 Trivia.propTypes = {
   onFetchNextQuestion: PropTypes.func,
+  // onEvaluateUserResponse: PropTypes.func,
   timer: PropTypes.shape({
     period: PropTypes.number.isRequired,
     timeLeft: PropTypes.number.isRequired,
@@ -70,6 +71,7 @@ function mapDispatchToProps(dispatch) {
   return {
     dispatch,
     onFetchNextQuestion: () => dispatch(fetchNextQuestion()),
+    onEvaluateUserResponse: (question, response) => dispatch(evaluateUserResponse(question, response)),
   };
 }
 

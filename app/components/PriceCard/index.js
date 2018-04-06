@@ -29,19 +29,19 @@ class PriceCard extends React.PureComponent { // eslint-disable-line react/prefe
             <img src="https://via.placeholder.com/100x100" alt="item of focus" />
           </picture>
           <div className="card__body">
-            <p>The question is easy</p>
+            <p>Coming soon...</p>
           </div>
           <div className="card__footer">
             <div className="promo-selection" id="promoSelection">
-              <button className="btn">TRUE</button> &nbsp;
-              <button className="btn">FALSE</button>
+              <button className="btn">SAVE</button> &nbsp;
+              <button className="btn">SHARE</button>
             </div>
           </div>
         </div>
       </div>
 
       <div className="footer">
-        <Button>NEXT</Button>
+        <Button>REFRESH</Button>
       </div>
     </div>);
   }

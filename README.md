@@ -7,7 +7,7 @@ Generate any timed update EveryHour!
 [![Coverage Status](https://coveralls.io/repos/github/nshimiye/every-hour/badge.svg?branch=master)](https://coveralls.io/github/nshimiye/every-hour?branch=master)
 [![Dev Dependencies](https://david-dm.org/nshimiye/every-hour/dev-status.svg)](https://david-dm.org/nshimiye/every-hour?type=dev)
 [![Greenkeeper badge](https://badges.greenkeeper.io/nshimiye/every-hour.svg)](https://greenkeeper.io/)
-[![Donate](https://img.shields.io/badge/donate-paypal-blue.svg)](https://paypal.me/nshimiye)
+[![Donate](https://img.shields.io/badge/donate-paypal-blue.svg)](https://paypal.me/nshimiyetech)
 
 ## Inspiration
 

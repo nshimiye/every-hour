@@ -1,0 +1,13 @@
+.github-corner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  fill: #fafafa;
+  z-index: 2;
+  width: 60px;
+  height: 60px;
+}
+
+.github-corner__bg {
+  fill: #999;
+}

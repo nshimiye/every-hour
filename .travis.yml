@@ -20,20 +20,11 @@ before_deploy:
 - export INDEX_TEMPLATE="app/ghPages.html"
 - npm run build
 deploy:
-  - provider: script
-    skip-cleanup: true
-    script: bash ./deploy.sh
-    on:
-      branch: master
-  - provider: pages
-    local-dir: build
-    skip-cleanup: true
-    github-token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, marked secure
-    keep-history: true
-    verbose: true
-    on:
-      branch: prod
-env:
-  global:
-  - secure: 9mS6hMgs07aS94VjAtb7h9EpZA29+Ti67nO0mHV3zmQrO+VXHFsJ/wvzpxLMG2NCjNo8/acBP9foSe4+eS3KHV5XM4dmQlOat8WFULxR5wtWja7W7HZQ2omQw6PZ39J+8Ok8oqzE15MHqjITJS6JXXk5dgPuKRLyCyr3otoq6TiaPI+MzTyceuoyvNntL5+2mSPq0vnpRZuzNVahKJ0vt89Oxa6lw8EmCcXugWz+O41xKAhZC55TZ5dImSzT/YgMw60o5AU7NBkQfgHJ3VNzNB4M/JkmFiEsvX+PHr/my8WwQEh/d+yCB0CNOvQAQ6rVh8asgoOU30Ev35kcE4ZQqVPNovo1rzzUa6w7y8mA5DiYbtLWYD+Q5NuQD1ixrMddOrWtBZ4kMWMcZT80+PEjKM10Pn70H79CIFuidV2bUwI7/HhiG38JFJ5XPbJJkh/PX1400Vx03omRCLj5DhuPcb2b70fP/6R9bLxZahsf24BOk4DB+rF+BwkRAXW+I8+4QIWCIEa61hJBgnpDSztU/9uIw5eb6jBjD1M8smBOwYMYwTdHklxegop5PjO5KaTGYBE6dxnTLchPcXR15q4R7ffQq0sYkXzcwzjn5rZD0ffV+/vUVLKWWKA/T+i9RhSXiU4xsz8HtAI4OEIkR2eEOoPbyX8pYwPspWHpBC2Wrn4=
-  - secure: bFGGW2L7TY6HBkHrsaZkfBUu9rzzwBDt9I5JPT5TOag+ONTpjZRCaL8gFZm4EnzpGmqZSP4h+MIkg1hpsF9nGdvrjLco94p6NrvyyV4Sh4UdgZfV2v9+ipZaK/7A2upTMoZxRnSHcY2GnfZo1nN+wXgZub20NKSCkWQJeJqpJTIjqKpSs7j5PeA3IGtDoqhg3qtkXUnPjkBCaFj5mf1x04ERX87x3EshlRLUzq/DLCuunU73mwN1zUIeNCvp4AQ/pLSfESbGZQUw2IjK98hIvKh4ZVl7WraLZvE1b2U4hdVeRiKfXp03l92oQraQcxURzaxUmPUxhwtgKCX0ZXkFuU5n0BdBfOkikR1prc51/RuQPnrwlDfXJ3eHtYSte+nDt2js5S1JXy12ty3lZtITFHJR5MlmTFIWxVYk/QQm9a8K2dvj1jMjsNBwoafzPtZezHbchQXcUeGgDx57urbWaw5XSFw4a80WbDrPGs/0Vbbd6cMxNJG7+uWyj9WzhK1AqmrwjfOTnwxManZSdauC6s5fT5VrPFcy85DPWO3Wi5diAiGf/OO7qnEY3bfJF7e4E7390A6jO7ex+OLs58SHitMKRLx1HivS4g91tR9MUXm6J0LPlZXh9nj9GgbwzvouPmmC36h+dm1B0BOYMAB1p3pQTX0DjKgPtBz82jphTWk=
+  provider: pages
+  local-dir: build
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, marked secure
+  keep-history: true
+  verbose: true
+  on:
+    branch: master
